@@ -1,0 +1,24 @@
+---------------------------------------------------
+Here are the ownership and the certification details
+of the Notebook work Library 1.0
+---------------------------------------------------
+
+app_name - 						Notebook work Library
+app_alias - 					notebookworklibrary
+app_author_name - 				My Company
+app_author_organizational - 	My Company
+app_author_organization - 		My Company
+app_author_locality - 			My Company
+app_author_state - 				Bihar
+app_author_country - 			India
+app_password - 					bErBkyXsB1Gx
+app_versionName - 				versionName "1.0"
+app_versionCode - 				100
+
+---------------------------------------------------
+The certification was created by WebIntoApp.com at
+the Sunday 30th of November 2025 10:35:46 AM
+
+https://webintoapp.com
+---------------------------------------------------
+
