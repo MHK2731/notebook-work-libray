@@ -1,0 +1,16 @@
+{
+  "name": "Notebook Work Library",
+  "short_name": "NW Library",
+  "description": "Educational library for Class 10th CBSE students.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2c3e50",
+  "icons": [
+    {
+      "src": "images/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
