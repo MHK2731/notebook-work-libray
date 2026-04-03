@@ -39,10 +39,22 @@
 										</header>
 										
 										<ul class="actions">
-											
+						
 											<li><a href="https://workhaul.my.canva.site/mhk" class="button big">Go to my old Website</a></li>
-											<li><a href="../index.html" class="button big">Go to Home</a></li>
+											<li><a id="goHomeBtn" href="../index.html" class="button big">Go to Home</a></li>
 										</ul>
+										<script>
+										(function(){
+										  var btn = document.getElementById('goHomeBtn');
+										  if(!btn) return;
+										  // When viewing via file:// keep the relative path; when served over HTTP(S) point to site root
+										  if (location.protocol === 'file:') {
+										    btn.href = '../index.html';
+										  } else {
+										    btn.href = '/index.html';
+										  }
+										})();
+										</script>
 									</div>
 									
 									<span class="image object">
