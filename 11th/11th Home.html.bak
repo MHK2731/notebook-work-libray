@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+	<head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-597CBPND');</script>
+	<!-- End Google Tag Manager -->
+		<title>Home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="manifest" href="manifest.json">
+		<meta name="theme-color" content="#2c3e50">
+	</head>
+	<body class="is-preload theme-dark">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+								
+									
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>Welcome to Notebook Work Library</h1><br />
+											<h2>by Mohd Hifzaan Khan</h2>
+											<p>This website was originally designed for Class 10th students in the 2025-26 academic session. It is currently being updated to serve Class 11th students and the new Class 10th cohort
+										</header>
+										
+										<ul class="actions">
+											
+											<li><a href="https://workhaul.my.canva.site/mhk" class="button big">Go to my old Website</a></li>
+											<li><a href="../index.html" class="button big">Go to Home</a></li>
+										</ul>
+										</div>
+										
+										<span class="image object">
+											<img src="images/1.jpg" alt="" />
+										</span>
+									</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Choose your Class 11th Stream</h2>
+									</header>
+									<div class="features">
+										<article>
+											<span class="icon solid fa-flask"></span>
+											<div class="content">
+											<h3><a href="PCB.html">PCB</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-cogs"></span>
+											<div class="content">
+											<h3><a href="PCM.html">PCM</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-flask"></span>
+											<div class="content">
+											<h3><a href="Commerce.html">Commerce</a></h3>
+											<p>Clear explanations, experiment summaries, and topic question banks for exam prep.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-book"></span>
+											<div class="content">
+											<h3><a href="Humanities.html">Humanities</a></h3>
+											<p>Literature notes, language practice, and model answers for reading & writing.</p>
+											</div>
+										</article>
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Subjects</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<a href="Maths.html" class="image"><img src="images/pic01.jpg" alt="" /></a>
+										<h3>Maths</h3>
+										<p></p>
+											<ul class="actions">
+												<li><a href="Maths.html" class="button">Let's go!</a></li>
+											</ul>
+										</article>
+										<article>
+... (truncated)
