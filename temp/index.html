@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="manifest" href="manifest.json">
+		<meta name="theme-color" content="#2c3e50">
+	</head>
+	<body class="is-preload theme-dark">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+								
+										
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>Welcome to Notebook Work Library</h1><br />
+											<h2>by Mohd Hifzaan Khan</h2>
+											<p>This website is now closed and all the content has been moved to my new website. Click the button below to visit the new site and explore the updated content and resources!
+											</p>
+										</header>
+										
+										<ul class="actions">
+											
+											<li><a href="https://dpsnwl.rf.gd/index.html" class="button big">Go to my New Website</a></li>
+										</ul>
+									</div>
+									
+									<span class="image object">
+										<img src="images/1.jpg" alt="" />
+									</span>
+								</section>
+
+							<!-- Section -->
+									
+										
+										
+										
+								
+
+							<!-- Section -->
+								<!--<section>
+									<header class="major">
+									<h2>Recent Notes</h2>
+								</header>
+								<div class="mini-posts">
+									<article>
+										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+										<p>Short updates and recent additions from the notebook library.</p>
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+										<p>Short updates and recent additions from the notebook library.</p>
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+										<p>Short updates and recent additions from the notebook library.</p>
+									</article>
+								</div> 
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>-->
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Have a question or suggestion? Reach out at <a href="mailto:hifzaankhandpsjkp.3270@gmail.com">hifzaankhandpsjkp.3270@gmail.com</a> or call us and we'll respond promptly.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="mailto:hifzaankhandpsjkp.3270@gmail.com">hifzaankhandpsjkp.3270@gmail.com</a></li>
+										<li class="icon solid fa-phone">7311140158</li>
+										<li class="icon solid fa-home">C-29 Kendriya Vihar colony<br />
+										Jankipuram Lucknow, UP</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+								<p class="copyright">&copy; Notebook Work Library. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		<script>
+			let deferredPrompt;
+			console.log('PWA Install Script Loaded'); // Debug log
+
+			window.addEventListener('beforeinstallprompt', (e) => {
+				console.log('beforeinstallprompt event fired!'); // This confirms PWA works
+				e.preventDefault();
+				deferredPrompt = e;
+				showInstallPromotion();
+			});
+
+			function showInstallPromotion() {
+				console.log('Showing install button');
+				const installButton = document.createElement('button');
+				installButton.textContent = 'Install App';
+				installButton.className = 'button big';
+				installButton.style.position = 'fixed';
+				installButton.style.bottom = '20px';
+				installButton.style.right = '20px';
+				installButton.style.zIndex = '1000';
+				installButton.onclick = installApp;
+				document.body.appendChild(installButton);
+			}
+
+			function installApp() {
+				console.log('Install button clicked');
+				deferredPrompt.prompt();
+				deferredPrompt.userChoice.then((choiceResult) => {
+					console.log('User choice:', choiceResult.outcome);
+					deferredPrompt = null;
+				});
+			}
+
+			window.addEventListener('appinstalled', (evt) => {
+				console.log('App was installed successfully');
+			});
+
+			// Also check if service worker is registered
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.ready.then(reg => {
+					console.log('Service Worker is active');
+				}).catch(err => {
+					console.log('Service Worker registration error:', err);
+				});
+			}
+		</script>
+		<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyB60EauehMj2wYwbJ1JFpUkGMK77WgVMTg",
+    authDomain: "notebook-work-library.firebaseapp.com",
+    projectId: "notebook-work-library",
+    storageBucket: "notebook-work-library.firebasestorage.app",
+    messagingSenderId: "1014113484674",
+    appId: "1:1014113484674:web:595be7639727f02262599b",
+    measurementId: "G-8P2Q7XJHPV"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+	</body>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M12Y8V1EF4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M12Y8V1EF4');
+</script>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('sw.js')
+					.then(reg => console.log('Service Worker registered', reg))
+					.catch(err => console.log('Service Worker registration failed', err));
+			});
+		}
+	</script>
+</html>
