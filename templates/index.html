@@ -194,18 +194,24 @@
 						<table>
 							<tr>
 								<th>Notice</th>
-								<th>Details</th>
+                                <th>Submitted</th>
+                                <th>Details</th>
+                            </tr>
+                            {% for notice in notices %}
+                            <tr>
+                                <td>{{ notice.title }}</td>
+                                <td>{{ notice.date_created.strftime('%Y-%m-%d %H:%M') }}</td>
 							</tr>
-							<tr>
-								<td>Notice 2</td>
-								<td>Details about notice 2</td>
-								<td>
-									<a href="https://drive.google.com/file/d/1Xo9n8sHj2l7m5v6n8p9q0r1s2t3u4v5/view?usp=sharing" class="button small">View</a>
-								</td>
-							</tr>
+							{% endfor %}
 						</table>
 
-
+<form action="/" method="POST" enctype="multipart/form-data">
+							<input type="text" id="noticeTitle" name="noticeTitle" placeholder="Notice Title" required>
+							<br><br>
+							<input type="file" id="fileUpload" name="fileUpload" required>
+							
+							<input type="submit" value="Upload" style="float: right;">
+						</form>
 							</div>
 						</section>
 								
