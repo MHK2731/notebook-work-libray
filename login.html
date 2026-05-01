@@ -47,6 +47,7 @@
                             <ul class="actions">
                                 <li><button id="signinButton" class="button primary">Sign in with Google</button></li>
                                 <li><button id="signoutButton" class="button">Sign out</button></li>
+                                <li><button id="studyPlannerButton" class="button" disabled>Open Study Planner</button></li>
                             </ul>
                             <div id="userInfo" style="margin-top:1.5rem;"></div>
                         </div>
@@ -77,6 +78,7 @@
 
             const signinButton = document.getElementById('signinButton');
             const signoutButton = document.getElementById('signoutButton');
+            const studyPlannerButton = document.getElementById('studyPlannerButton');
             const status = document.getElementById('status');
             const userInfo = document.getElementById('userInfo');
 
@@ -97,7 +99,9 @@
                     `;
                     signinButton.disabled = true;
                     signoutButton.disabled = false;
+                    studyPlannerButton.disabled = false;
                 } else {
+                    studyPlannerButton.disabled = true;
                     status.textContent = 'You are not signed in. Sign in with a Gmail account to continue.';
                     userInfo.textContent = '';
                     signinButton.disabled = false;
@@ -119,6 +123,10 @@
                 } catch (error) {
                     status.textContent = `Sign-out failed: ${error.message}`;
                 }
+            });
+
+            studyPlannerButton.addEventListener('click', () => {
+                window.location.href = 'study-planner.html';
             });
 
             listenAuthState(updateUi);
