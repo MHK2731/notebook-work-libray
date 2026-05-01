@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+    <head>
+        <title>Study Planner</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
+        <meta name="theme-color" content="#2c3e50">
+    </head>
+    <body class="is-preload theme-dark">
+        <div id="wrapper">
+            <div id="main">
+                <div class="inner">
+                    <header id="header"></header>
+
+                    <section id="banner">
+                        <div class="content">
+                            <header>
+                                <h1>Study Planner</h1>
+                                <h2>Plan study slots and get reminders</h2>
+                                <p style="font-size:1.2rem; font-weight:700; color:#4cd964; margin-top:1rem;">
+                                    Set study reminders and never miss a study slot. Browser notifications will alert you at the right time.
+                                </p>
+                            </header>
+                            <ul class="actions">
+                                <li><a href="login.html" class="button big">Back to Login</a></li>
+                            </ul>
+                        </div>
+                        <span class="image object">
+                            <img src="images/1.jpg" alt="Study Planner" />
+                        </span>
+                    </section>
+
+                    <section>
+                        <header class="major">
+                            <h2>Create a Study Slot</h2>
+                        </header>
+                        <div class="box">
+                            <div style="margin-bottom: 1rem;">
+                                <button id="requestPermissionButton" class="button primary">Enable Notifications</button>
+                                <span id="permissionStatus" style="margin-left:1rem;color:#fff;"></span>
+                            </div>
+                            <form id="slotForm">
+                                <div class="fields">
+                                    <div class="field half">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" id="subject" name="subject" placeholder="Maths, Physics, English..." required />
+                                    </div>
+                                    <div class="field half">
+                                        <label for="datetime">Date & Time</label>
+                                        <input type="datetime-local" id="datetime" name="datetime" required />
+                                    </div>
+                                    <div class="field half">
+                                        <label for="title">Slot Title</label>
+                                        <input type="text" id="title" name="title" placeholder="Chapter 5 revision" required />
+                                    </div>
+                                    <div class="field half">
+                                        <label for="note">Notes</label>
+                                        <input type="text" id="note" name="note" placeholder="Prepare formulas, practice questions" />
+                                    </div>
+                                </div>
+                                <ul class="actions">
+                                    <li><button type="submit" class="button primary">Save Study Slot</button></li>
+                                    <li><button type="reset" class="button">Clear</button></li>
+                                </ul>
+                            </form>
+                        </div>
+                    </section>
+
+                    <section>
+                        <header class="major">
+                            <h2>Saved Study Slots</h2>
+                        </header>
+                        <div class="box">
+                            <p id="slotsMessage">No study slots yet. Add one to start receiving reminders.</p>
+                            <div id="slotsList"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div id="sidebar">
+                <div class="inner">
+                    <section>
+                        <header class="major">
+                            <h2>How reminders work</h2>
+                        </header>
+                        <p>
+                            Once notifications are enabled, the planner will alert you at the scheduled study time.
+                            Keep this page open in the browser for the reminders to trigger reliably.
+                        </p>
+                    </section>
+                    <footer id="footer">
+                        <p class="copyright">&copy; Notebook Work Library. All rights reserved.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <script type="module">
+            import { loadSlots, saveSlots, formatDateTime, requestNotificationPermission, scheduleSlotNotification, clearScheduledNotification } from '/assets/js/studyPlanner.js';
+
+            const slotForm = document.getElementById('slotForm');
+            const slotsList = document.getElementById('slotsList');
+            const slotsMessage = document.getElementById('slotsMessage');
+            const permissionStatus = document.getElementById('permissionStatus');
+            const requestPermissionButton = document.getElementById('requestPermissionButton');
+
+            let slots = loadSlots();
+
+            function updatePermissionDisplay() {
+                if (!('Notification' in window)) {
+                    permissionStatus.textContent = 'Notifications not supported in this browser.';
+                    requestPermissionButton.disabled = true;
+                    return;
+                }
+
+                const state = Notification.permission;
+                permissionStatus.textContent = `Notification permission: ${state}`;
+                requestPermissionButton.disabled = state === 'granted';
+            }
+
+            function renderSlots() {
+                if (!slots.length) {
+                    slotsList.innerHTML = '';
+                    slotsMessage.textContent = 'No study slots yet. Add one to start receiving reminders.';
+                    return;
+                }
+
+                slotsMessage.textContent = '';
+                slotsList.innerHTML = slots.map(slot => {
+                    const reminderStatus = Notification.permission === 'granted' ? 'Reminder set' : 'Reminder pending';
+                    return `
+                        <article class="spotlight" data-id="${slot.id}">
+                            <div class="content">
+                                <h3>${slot.subject}</h3>
+                                <p><strong>${slot.title}</strong></p>
+                                <p>${slot.note || 'No notes added.'}</p>
+                                <p><strong>Time:</strong> ${formatDateTime(slot.datetime)}</p>
+                                <p><strong>Status:</strong> ${reminderStatus}</p>
+                                <ul class="actions small">
+                                    <li><button class="button" data-action="reschedule" data-id="${slot.id}">Reschedule</button></li>
+                                    <li><button class="button" data-action="delete" data-id="${slot.id}">Delete</button></li>
+                                </ul>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+
+                slotsList.querySelectorAll('button[data-action]').forEach(button => {
+                    const action = button.dataset.action;
+                    const slotId = button.dataset.id;
+                    button.addEventListener('click', () => {
+                        if (action === 'reschedule') {
+                            const slot = slots.find(s => s.id === slotId);
+                            if (slot) {
+                                scheduleSlotNotification(slot);
+                                alert('Reminder rescheduled for ' + formatDateTime(slot.datetime));
+                            }
+                        } else if (action === 'delete') {
+                            removeSlot(slotId);
+                        }
+                    });
+                });
+            }
+
+            function addSlot(slot) {
+                slots.push(slot);
+                saveSlots(slots);
+                renderSlots();
+                if (Notification.permission === 'granted') {
+                    scheduleSlotNotification(slot);
+                }
+            }
+
+            function removeSlot(slotId) {
+                slots = slots.filter(slot => slot.id !== slotId);
+                saveSlots(slots);
+                clearScheduledNotification(slotId);
+                renderSlots();
+            }
+
+            slotForm.addEventListener('submit', event => {
+                event.preventDefault();
+                const subject = document.getElementById('subject').value.trim();
+                const title = document.getElementById('title').value.trim();
+                const datetime = document.getElementById('datetime').value;
+                const note = document.getElementById('note').value.trim();
+
+                if (!subject || !title || !datetime) {
+                    alert('Please fill in subject, title and date/time.');
+                    return;
+                }
+
+                const newSlot = {
+                    id: `slot-${Date.now()}`,
+                    subject,
+                    title,
+                    note,
+                    datetime,
+                };
+
+                addSlot(newSlot);
+                slotForm.reset();
+            });
+
+            requestPermissionButton.addEventListener('click', async () => {
+                try {
+                    const permission = await requestNotificationPermission();
+                    updatePermissionDisplay();
+                    if (permission === 'granted') {
+                        slots.forEach(scheduleSlotNotification);
+                        renderSlots();
+                    }
+                } catch (error) {
+                    permissionStatus.textContent = error.message;
+                }
+            });
+
+            updatePermissionDisplay();
+            renderSlots();
+            if (Notification.permission === 'granted') {
+                slots.forEach(scheduleSlotNotification);
+            }
+        </script>
+    </body>
+</html>
