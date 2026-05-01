@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+    <head>
+        <title>Student Login</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
+        <meta name="theme-color" content="#2c3e50">
+    </head>
+    <body class="is-preload theme-dark">
+        <div id="wrapper">
+            <div id="main">
+                <div class="inner">
+                    <header id="header"></header>
+                    <section id="banner">
+                        <div class="content">
+                            <header>
+                                <h1>Secure Student Login</h1>
+                                <h2>Fast access with your Gmail account</h2>
+                                <p style="font-size:1.35rem; font-weight:800; color:#4cd964; margin-top:1rem;">
+                                    THIS SITE IS TOTALLY SAFE — YOUR LOGIN IS HANDLED SECURELY BY GOOGLE AND FIREBASE.
+                                </p>
+                                <p style="font-size:1rem; margin-top:1rem; color:#ececec;">
+                                    Use the button below to sign in with your Gmail. Your password stays with Google, and we only receive your verified email details.
+                                </p>
+                            </header>
+                            <ul class="actions">
+                                <li><a href="index.html" class="button big">Go to Home</a></li>
+                            </ul>
+                        </div>
+                        <span class="image object">
+                            <img src="images/1.jpg" alt="Secure Student Login" />
+                        </span>
+                    </section>
+
+                    <section>
+                        <header class="major">
+                            <h2>Google Sign In</h2>
+                        </header>
+                        <div class="box">
+                            <p id="status">Please sign in using your Gmail account.</p>
+                            <ul class="actions">
+                                <li><button id="signinButton" class="button primary">Sign in with Google</button></li>
+                                <li><button id="signoutButton" class="button">Sign out</button></li>
+                            </ul>
+                            <div id="userInfo" style="margin-top:1.5rem;"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div id="sidebar">
+                <div class="inner">
+                    <section>
+                        <header class="major">
+                            <h2>Why this is safe</h2>
+                        </header>
+                        <p>
+                            This login uses Google’s secure OAuth system. Your Gmail credentials are never stored by this website.
+                            Only your verified email address is used to help manage student access.
+                        </p>
+                    </section>
+                    <footer id="footer">
+                        <p class="copyright">&copy; Notebook Work Library. All rights reserved.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <script type="module">
+            import { signInWithGoogle, signOutStudent, listenAuthState } from '/assets/js/auth.js';
+
+            const signinButton = document.getElementById('signinButton');
+            const signoutButton = document.getElementById('signoutButton');
+            const status = document.getElementById('status');
+            const userInfo = document.getElementById('userInfo');
+
+            function updateUi(user) {
+                if (user) {
+                    const email = user.email || '';
+                    const isGmail = /@(gmail|googlemail)\.com$/i.test(email);
+                    if (!isGmail) {
+                        status.textContent = 'Please sign in with a Gmail account. Signing out now.';
+                        userInfo.textContent = '';
+                        signOutStudent();
+                        return;
+                    }
+                    status.textContent = `Signed in as ${user.displayName || email}`;
+                    userInfo.innerHTML = `
+                        <strong>Email:</strong> ${email}<br />
+                        <strong>Verified:</strong> ${user.emailVerified ? 'Yes' : 'No'}
+                    `;
+                    signinButton.disabled = true;
+                    signoutButton.disabled = false;
+                } else {
+                    status.textContent = 'You are not signed in. Sign in with a Gmail account to continue.';
+                    userInfo.textContent = '';
+                    signinButton.disabled = false;
+                    signoutButton.disabled = true;
+                }
+            }
+
+            signinButton.addEventListener('click', async () => {
+                try {
+                    await signInWithGoogle();
+                } catch (error) {
+                    status.textContent = `Sign-in failed: ${error.message}`;
+                }
+            });
+
+            signoutButton.addEventListener('click', async () => {
+                try {
+                    await signOutStudent();
+                } catch (error) {
+                    status.textContent = `Sign-out failed: ${error.message}`;
+                }
+            });
+
+            listenAuthState(updateUi);
+        </script>
+    </body>
+</html>
