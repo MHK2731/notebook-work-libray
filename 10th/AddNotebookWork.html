@@ -38,8 +38,8 @@
                         <header class="major">
                             <h2>Submit Notebook Work</h2>
                         </header>
-                        <p>Please fill out the form below with your notebook work details. If you have a file, include a link or instructions in the message area so the content can be added to the site.</p>
-                        <form action="mailto:hifzaankhandpsjkp.3270@gmail.com" method="post" enctype="text/plain">
+                        <p>Please fill out the form below with your notebook work details. If you have a file, either upload a PDF or provide a file link so the content can be added to the site.</p>
+                        <form id="workForm" action="/api/notebook-work" method="post" enctype="multipart/form-data">
                             <div class="fields">
                                 <div class="field half">
                                     <label for="name">Your name</label>
@@ -69,6 +69,11 @@
                                     <label for="filelink">File link or reference</label>
                                     <input type="text" name="filelink" id="filelink" placeholder="Google Drive link, PDF path, etc." />
                                 </div>
+                                <div class="field">
+                                    <label for="pdfFile">Upload PDF</label>
+                                    <input type="file" name="pdfFile" id="pdfFile" accept="application/pdf" />
+                                </div>
+                                <div class="field" id="submitStatus" style="color:#4cd964; font-weight:700;"></div>
                                 <div class="field">
                                     <label for="description">Description or notes</label>
                                     <textarea name="description" id="description" rows="5" placeholder="Write any instructions, summary, or how to use this notebook work."></textarea>
@@ -129,5 +134,6 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+        <script src="/assets/js/addWork.js"></script>
     </body>
 </html>
