@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+    <head>
+        <title>Student Login</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
+        <meta name="theme-color" content="#2c3e50">
+    </head>
+    <body class="is-preload theme-dark">
+        <div id="wrapper">
+            <div id="main">
+                <div class="inner">
+                    <header id="header"></header>
+                    <section id="banner">
+                        <div class="content">
+                            <header>
+                                <h1>Secure Student Login</h1>
+                                <h2>Access your study planner & library tools</h2>
+                                <p style="font-size:1.35rem; font-weight:800; color:#4cd964; margin-top:1rem;">
+                                    Safe local authentication for Notebook Work Library.
+                                </p>
+                                <p style="font-size:1rem; margin-top:1rem; color:#ececec;">
+                                    Sign in with your student account to load your personalized planner and resources.
+                                </p>
+                            </header>
+                            <ul class="actions">
+                                <li><a href="index.html" class="button big">Go to Home</a></li>
+                            </ul>
+                        </div>
+                        <span class="image object">
+                            <img src="images/1.jpg" alt="Secure Student Login" />
+                        </span>
+                    </section>
+
+                    <section>
+                        <header class="major">
+                            <h2>Login</h2>
+                        </header>
+                        <div class="box">
+                            <p id="status">Please sign in using your email and password.</p>
+                            <form id="loginForm">
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <input id="email" type="email" name="email" placeholder="student@example.com" required />
+                                </div>
+                                <div class="field">
+                                    <label for="password">Password</label>
+                                    <input id="password" type="password" name="password" placeholder="Password123!" required />
+                                </div>
+                                <ul class="actions">
+                                    <li><button type="submit" class="button primary">Login</button></li>
+                                    <li><button id="logoutButton" type="button" class="button">Logout</button></li>
+                                    <li><button id="studyPlannerButton" type="button" class="button" disabled>Open Study Planner</button></li>
+                                </ul>
+                            </form>
+                            <div id="userInfo" style="margin-top:1.5rem;"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div id="sidebar">
+                <div class="inner">
+                    <section>
+                        <header class="major">
+                            <h2>Why this is safe</h2>
+                        </header>
+                        <p>
+                            This login uses a local secure session on the server.
+                            Your password is checked on the backend and the site only retains a session token.
+                        </p>
+                    </section>
+                    <footer id="footer">
+                        <p class="copyright">&copy; Notebook Work Library. All rights reserved.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <script src="/assets/js/login.js"></script>
+    </body>
+</html>

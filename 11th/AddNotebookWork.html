@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+    <head>
+        <title>Add Notebook Work</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#2c3e50">
+    </head>
+    <body class="is-preload theme-dark">
+        <div id="wrapper">
+            <div id="main">
+                <div class="inner">
+                    <header id="header"></header>
+                    <section id="banner">
+                        <div class="content">
+                            <header>
+                                <h1>Add Notebook Work</h1>
+                                <h2>Submit your Class 11 notebook work for the library</h2>
+                                <p>Share your notebook work details so the library can be updated with the latest Class 11 materials.</p>
+                            </header>
+                            <ul class="actions">
+                                <li><a href="11th Home.html" class="button big">Back to 11th Home</a></li>
+                            </ul>
+                        </div>
+                        <span class="image object">
+                            <img src="images/1.jpg" alt="Notebook Work" />
+                        </span>
+                    </section>
+
+                    <section>
+                        <header class="major">
+                            <h2>Submit Notebook Work</h2>
+                        </header>
+                        <p>Please fill in your notebook work details and include a file link or upload a PDF for the content to be added to the site.</p>
+                        <form id="workForm" action="/api/notebook-work" method="post" enctype="multipart/form-data">
+                            <div class="fields">
+                                <div class="field half">
+                                    <label for="name">Your name</label>
+                                    <input type="text" name="name" id="name" placeholder="Full name" required />
+                                </div>
+                                <div class="field half">
+                                    <label for="email">Email address</label>
+                                    <input type="email" name="email" id="email" placeholder="example@mail.com" required />
+                                </div>
+                                <div class="field half">
+                                    <label for="class">Class</label>
+                                    <select name="class" id="class">
+                                        <option value="11">11th</option>
+                                        <option value="10">10th</option>
+                                        <option value="12">12th</option>
+                                    </select>
+                                </div>
+                                <div class="field half">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" name="subject" id="subject" placeholder="Maths, Physics, English..." required />
+                                </div>
+                                <div class="field">
+                                    <label for="title">Notebook work title</label>
+                                    <input type="text" name="title" id="title" placeholder="Chapter name or work title" required />
+                                </div>
+                                <div class="field">
+                                    <label for="filelink">File link or reference</label>
+                                    <input type="text" name="filelink" id="filelink" placeholder="Google Drive link, PDF path, etc." />
+                                </div>
+                                <div class="field">
+                                    <label for="pdfFile">Upload PDF</label>
+                                    <input type="file" name="pdfFile" id="pdfFile" accept="application/pdf" />
+                                </div>
+                                <div class="field" id="submitStatus" style="color:#4cd964; font-weight:700;"></div>
+                                <div class="field">
+                                    <label for="description">Description or notes</label>
+                                    <textarea name="description" id="description" rows="5" placeholder="Write any instructions, summary, or how to use this notebook work."></textarea>
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <li><input type="submit" value="Send Notebook Work" class="primary" /></li>
+                                <li><input type="reset" value="Reset" /></li>
+                            </ul>
+                        </form>
+                    </section>
+                </div>
+            </div>
+
+            <div id="sidebar">
+                <div class="inner">
+                    <nav id="menu">
+                        <header class="major">
+                            <h2>Menu</h2>
+                        </header>
+                        <ul>
+                            <li><a href="11th Home.html">Home</a></li>
+                            <li><a href="AddNotebookWork.html">Add Notebook Work</a></li>
+                            <li><a href="English.html">English</a></li>
+                            <li>
+                                <span class="opener">PCB</span>
+                                <ul>
+                                    <li><a href="Physics.html">Physics</a></li>
+                                    <li><a href="Chemistry.html">Chemistry </a></li>
+                                    <li><a href="Biology.html">Biology</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">PCM</span>
+                                <ul>
+                                    <li><a href="Physics.html">Physics</a></li>
+                                    <li><a href="Chemistry.html">Chemistry </a></li>
+                                    <li><a href="Maths.html">Maths</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">Commerce</span>
+                                <ul>
+                                    <li><a href="Accountancy.html">Accountancy</a></li>
+                                    <li><a href="Business Studies.html">Business Studies</a></li>
+                                    <li><a href="Micro Economics.html">Micro Economics</a></li>
+                                    <li><a href="Statistical Economics.html">Statistical Economics</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">Humanities</span>
+                                <ul>
+                                    <li><a href="History.html">History</a></li>
+                                    <li><a href="Psychology.html">Psychology</a></li>
+                                    <li><a href="Economics.html">Economics</a></li>
+                                    <li><a href="Political Science.html">Political Science</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">Optional Subjects</span>
+                                <ul>
+                                    <li><a href="Maths.html">Mathematics</a></li>
+                                    <li><a href="Computer Science.html">Computer Science</a></li>
+                                    <li><a href="Hindi.html">Hindi Core</a></li>
+                                    <li><a href="Psychology.html">Psychology</a></li>
+                                    <li><a href="Entrepreneurship.html">Entrepreneurship</a></li>
+                                    <li><a href="Physical Activity Trainer.html">Physical Activity Trainer</a></li>
+                                    <li><a href="Legal Studies.html">Legal Studies</a></li>
+                                    <li><a href="Economics.html">Economics</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">Skill Subjects</span>
+                                <ul>
+                                    <li><a href="Artificial Intelligence.html">Artificial Intelligence</a></li>
+                                    <li><a href="Data Science.html">Data Science</a></li>
+                                    <li><a href="Multimedia.html">Multimedia</a></li>
+                                    <li><a href="Banking.html">Banking</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <section>
+                        <header class="major">
+                            <h2>Need help?</h2>
+                        </header>
+                        <p>Send your notebook work details to <a href="mailto:hifzaankhandpsjkp.3270@gmail.com">hifzaankhandpsjkp.3270@gmail.com</a> or add a direct file link in the form above.</p>
+                    </section>
+
+                    <footer id="footer">
+                        <p class="copyright">&copy; Notebook Work Library. All rights reserved.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="/assets/js/addWork.js"></script>
+    </body>
+</html>

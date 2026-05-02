@@ -21,6 +21,15 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="manifest" href="manifest.json">
 		<meta name="theme-color" content="#2c3e50">
+		<style>
+			.ai-chat { margin: 2rem 0; }
+			.ai-chat #chatWindow { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 1rem; padding: 1rem; max-height: 420px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; }
+			.ai-chat .chat-message { padding: 1rem; border-radius: 1rem; line-height: 1.5; max-width: 100%; }
+			.ai-chat .chat-message.user { background: rgba(0,123,255,0.18); color: #f8f8f8; margin-left: auto; }
+			.ai-chat .chat-message.ai { background: rgba(255,255,255,0.08); color: #f8f8f8; }
+			.ai-chat textarea { width: 100%; resize: vertical; min-height: 120px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); color: #f8f8f8; border-radius: 0.75rem; padding: 0.9rem; }
+			.ai-chat .actions { margin-top: 1rem; }
+		</style>
 	</head>
 	<body class="is-preload theme-dark">
 
@@ -57,14 +66,29 @@
 									</span>
 								</section>
 
-							<!-- Section -->
-							
-								
+						<!-- Section -->
+						<section>
+							<header class="major">
+								<h2>AI Question Answering</h2>
+							</header>
+							<div class="ai-chat">
+								<div id="chatWindow" class="chat-window">
+									<div class="chat-message ai">Hello! Ask me any school question and I will answer in a clear, step-by-step way.</div>
+								</div>
+								<form id="aiForm">
+									<textarea id="aiQuestion" placeholder="Type your question here..." required></textarea>
+									<ul class="actions">
+										<li><button type="submit" class="button">Ask AI</button></li>
+										<li><button type="button" id="aiClear" class="button alt">Clear</button></li>
+									</ul>
+								</form>
+							</div>
+						</section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Work</h2>
+						<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Work</h2>
 									</header>
 									<div class="posts">
 										<article>
@@ -313,6 +337,79 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				(function() {
+					const chatWindow = document.getElementById('chatWindow');
+					const aiForm = document.getElementById('aiForm');
+					const aiQuestion = document.getElementById('aiQuestion');
+					const aiClear = document.getElementById('aiClear');
+
+					function appendChat(text, sender) {
+						const message = document.createElement('div');
+						message.className = 'chat-message ' + sender;
+						message.textContent = text;
+						chatWindow.appendChild(message);
+						chatWindow.scrollTop = chatWindow.scrollHeight;
+					}
+
+					function generateAnswer(question) {
+						const q = question.trim().toLowerCase();
+						if (!q) return 'Please type a question and press Ask AI.';
+						if (/\b(meta|facebook|meta ai|ai)\b/.test(q)) {
+							return 'Meta AI refers to intelligent systems built to answer questions and help with learning. Here, this local assistant can explain school topics and solve homework-style questions.';
+						}
+						if (/\b(math|algebra|geometry|trigonometry|calculus|equation|percentage|ratio|numbers)\b/.test(q)) {
+							return 'In Maths, focus on understanding the problem, breaking it into smaller steps, and applying the correct formula. Ask a specific topic like algebra, geometry, or problem solving for a precise answer.';
+						}
+						if (/\b(physics|force|motion|energy|work|power|speed|velocity|acceleration|gravity)\b/.test(q)) {
+							return 'Physics explains how the world moves. Start with definitions such as force, energy, and motion, then use formulas like F = ma, speed = distance/time, and energy = work done.';
+						}
+						if (/\b(chemistry|atom|molecule|reaction|acid|base|periodic|element|compound)\b/.test(q)) {
+							return 'Chemistry studies matter and how it changes. Learn the basic terms, balance chemical equations, and classify reactions as acid-base, redox, or displacement.';
+						}
+						if (/\b(english|grammar|essay|poem|story|literature|comprehension)\b/.test(q)) {
+							return 'For English, I can help with grammar, essay structure, comprehension, and literature analysis. Ask about a particular question or book, and I will explain it clearly.';
+						}
+						if (/\b(hindi|भाषा|व्याकरण|कविता|लेखन|कहानी)\b/.test(q)) {
+							return 'In Hindi, focus on correct grammar, sentence construction, and understanding poetry or prose. Share the question and I can guide you through the answer step by step.';
+						}
+						if (/\b(history|geography|economics|political science|civics|social studies|history|map)\b/.test(q)) {
+							return 'For Social Studies, I can explain events, concepts, maps, and economic ideas. Ask about a chapter or topic, and I will give you a clear explanation.';
+						}
+						if (/\b(exam|paper|pyq|practice|revision|study|homework)\b/.test(q)) {
+							return 'For exam preparation, practice past papers, write complete answers, and review the marking scheme. I can help you with sample questions or study plans.';
+						}
+						return 'I can answer many school questions on Maths, Science, English, Hindi, Social Studies, and AI. Please ask a specific concept or problem for the best answer.';
+					}
+
+					function submitQuestion(event) {
+						event.preventDefault();
+						const question = aiQuestion.value.trim();
+						if (!question) return;
+						appendChat(question, 'user');
+						const placeholder = document.createElement('div');
+						placeholder.className = 'chat-message ai';
+						placeholder.textContent = 'Thinking...';
+						chatWindow.appendChild(placeholder);
+						chatWindow.scrollTop = chatWindow.scrollHeight;
+						aiQuestion.value = '';
+						setTimeout(() => {
+							placeholder.remove();
+							appendChat(generateAnswer(question), 'ai');
+						}, 700);
+					}
+
+					function clearChat() {
+						chatWindow.innerHTML = '';
+						appendChat('Hello! Ask me any school question and I will answer in a clear, step-by-step way.', 'ai');
+					}
+
+					if (aiForm && aiQuestion && aiClear && chatWindow) {
+						aiForm.addEventListener('submit', submitQuestion);
+						aiClear.addEventListener('click', clearChat);
+					}
+				})();
+		</script>
 		<script>
 			let deferredPrompt;
 			console.log('PWA Install Script Loaded'); // Debug log
