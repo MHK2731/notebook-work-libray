@@ -116,7 +116,25 @@ app.get('/api/me', (req, res) => {
   });
 });
 
-app.post('/api/notebook-work', upload.single('pdfFile'), (req, res) => {
+const requireAuth = (req, res, next) => {
+  const user = users.find((userEntry) => userEntry.id === req.session.userId);
+  if (!user) {
+    return res.status(401).json({ error: 'Authentication required. Please log in first.' });
+  }
+  next();
+};
+
+const requireAuthPage = (req, res, next) => {
+  const user = users.find((userEntry) => userEntry.id === req.session.userId);
+  if (!user) {
+    return res.redirect('/login');
+  }
+  next();
+};
+
+app.use(['/10th/AddNotebookWork.html', '/11th/AddNotebookWork.html'], requireAuthPage);
+
+app.post('/api/notebook-work', requireAuth, upload.single('pdfFile'), (req, res) => {
   const { name, email, class: studentClass, subject, title, filelink, description } = req.body;
   if (!name || !email || !subject || !title) {
     return res.status(400).json({ error: 'Please provide name, email, subject, and title.' });
@@ -154,7 +172,7 @@ app.post('/api/notebook-work', upload.single('pdfFile'), (req, res) => {
   res.json({ success: true, work: newWork });
 });
 
-app.get('/api/notebook-works', (req, res) => {
+app.get('/api/notebook-works', requireAuth, (req, res) => {
   const currentWorks = JSON.parse(fs.readFileSync(notebookWorkFile, 'utf-8')) || [];
   res.json({ works: currentWorks });
 });

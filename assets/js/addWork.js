@@ -1,7 +1,36 @@
 const workForm = document.getElementById('workForm');
 const submitStatus = document.getElementById('submitStatus');
 
+async function loadAuthState() {
+  try {
+    const response = await fetch('/api/me', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin'
+    });
+    const data = await response.json();
+    if (!data.authenticated) {
+      submitStatus.innerHTML = 'Please <a href="/login" style="color:#ffffff; text-decoration:underline;">log in</a> before submitting notebook work.';
+      submitStatus.style.color = '#ff6b6b';
+      if (workForm) {
+        Array.from(workForm.elements).forEach((element) => {
+          if (element.tagName !== 'BUTTON' && element.type !== 'reset') {
+            element.disabled = true;
+          }
+        });
+      }
+      return false;
+    }
+    return true;
+  } catch (error) {
+    submitStatus.textContent = 'Unable to verify login status. Please refresh and try again.';
+    submitStatus.style.color = '#ff6b6b';
+    return false;
+  }
+}
+
 if (workForm) {
+  loadAuthState();
   workForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     submitStatus.textContent = 'Submitting your notebook work...';
