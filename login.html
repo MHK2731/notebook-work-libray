@@ -21,12 +21,12 @@
                         <div class="content">
                             <header>
                                 <h1>Secure Student Login</h1>
-                                <h2>Fast access with your Gmail account</h2>
+                                <h2>Access your study planner & library tools</h2>
                                 <p style="font-size:1.35rem; font-weight:800; color:#4cd964; margin-top:1rem;">
-                                    THIS SITE IS TOTALLY SAFE — YOUR LOGIN IS HANDLED SECURELY BY GOOGLE AND FIREBASE.
+                                    Safe local authentication for Notebook Work Library.
                                 </p>
                                 <p style="font-size:1rem; margin-top:1rem; color:#ececec;">
-                                    Use the button below to sign in with your Gmail. Your password stays with Google, and we only receive your verified email details.
+                                    Sign in with your student account to load your personalized planner and resources.
                                 </p>
                             </header>
                             <ul class="actions">
@@ -40,15 +40,25 @@
 
                     <section>
                         <header class="major">
-                            <h2>Google Sign In</h2>
+                            <h2>Login</h2>
                         </header>
                         <div class="box">
-                            <p id="status">Please sign in using your Gmail account.</p>
-                            <ul class="actions">
-                                <li><button id="signinButton" class="button primary">Sign in with Google</button></li>
-                                <li><button id="signoutButton" class="button">Sign out</button></li>
-                                <li><button id="studyPlannerButton" class="button" disabled>Open Study Planner</button></li>
-                            </ul>
+                            <p id="status">Please sign in using your email and password.</p>
+                            <form id="loginForm">
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <input id="email" type="email" name="email" placeholder="student@example.com" required />
+                                </div>
+                                <div class="field">
+                                    <label for="password">Password</label>
+                                    <input id="password" type="password" name="password" placeholder="Password123!" required />
+                                </div>
+                                <ul class="actions">
+                                    <li><button type="submit" class="button primary">Login</button></li>
+                                    <li><button id="logoutButton" type="button" class="button">Logout</button></li>
+                                    <li><button id="studyPlannerButton" type="button" class="button" disabled>Open Study Planner</button></li>
+                                </ul>
+                            </form>
                             <div id="userInfo" style="margin-top:1.5rem;"></div>
                         </div>
                     </section>
@@ -62,8 +72,8 @@
                             <h2>Why this is safe</h2>
                         </header>
                         <p>
-                            This login uses Google’s secure OAuth system. Your Gmail credentials are never stored by this website.
-                            Only your verified email address is used to help manage student access.
+                            This login uses a local secure session on the server.
+                            Your password is checked on the backend and the site only retains a session token.
                         </p>
                     </section>
                     <footer id="footer">
@@ -73,63 +83,6 @@
             </div>
         </div>
 
-        <script type="module">
-            import { signInWithGoogle, signOutStudent, listenAuthState } from '/assets/js/auth.js';
-
-            const signinButton = document.getElementById('signinButton');
-            const signoutButton = document.getElementById('signoutButton');
-            const studyPlannerButton = document.getElementById('studyPlannerButton');
-            const status = document.getElementById('status');
-            const userInfo = document.getElementById('userInfo');
-
-            function updateUi(user) {
-                if (user) {
-                    const email = user.email || '';
-                    const isGmail = /@(gmail|googlemail)\.com$/i.test(email);
-                    if (!isGmail) {
-                        status.textContent = 'Please sign in with a Gmail account. Signing out now.';
-                        userInfo.textContent = '';
-                        signOutStudent();
-                        return;
-                    }
-                    status.textContent = `Signed in as ${user.displayName || email}`;
-                    userInfo.innerHTML = `
-                        <strong>Email:</strong> ${email}<br />
-                        <strong>Verified:</strong> ${user.emailVerified ? 'Yes' : 'No'}
-                    `;
-                    signinButton.disabled = true;
-                    signoutButton.disabled = false;
-                    studyPlannerButton.disabled = false;
-                } else {
-                    studyPlannerButton.disabled = true;
-                    status.textContent = 'You are not signed in. Sign in with a Gmail account to continue.';
-                    userInfo.textContent = '';
-                    signinButton.disabled = false;
-                    signoutButton.disabled = true;
-                }
-            }
-
-            signinButton.addEventListener('click', async () => {
-                try {
-                    await signInWithGoogle();
-                } catch (error) {
-                    status.textContent = `Sign-in failed: ${error.message}`;
-                }
-            });
-
-            signoutButton.addEventListener('click', async () => {
-                try {
-                    await signOutStudent();
-                } catch (error) {
-                    status.textContent = `Sign-out failed: ${error.message}`;
-                }
-            });
-
-            studyPlannerButton.addEventListener('click', () => {
-                window.location.href = 'study-planner.html';
-            });
-
-            listenAuthState(updateUi);
-        </script>
+        <script src="/assets/js/login.js"></script>
     </body>
 </html>
