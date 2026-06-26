@@ -25,9 +25,26 @@
 		<title>Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-		<link rel="manifest" href="manifest.json">
+		<link rel="stylesheet" href="assets/css/main.css" />
 		<meta name="theme-color" content="#2c3e50">
+		<style>
+			.stream-grid {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(240px, 1fr));
+				gap: 1.5rem;
+			}
+			.stream-grid .box {
+				width: 100%;
+				height: auto;
+				min-height: 260px;
+				margin: 0;
+			}
+			@media screen and (max-width: 736px) {
+				.stream-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload theme-dark">
 	<!-- Google Tag Manager (noscript) -->
@@ -76,36 +93,42 @@
 									<header class="major">
 										<h2>Choose your Class 11th Stream</h2>
 									</header>
-									<div class="features">
-										<article>
-											<span class="icon solid fa-flask"></span>
+									<div class="container stream-grid">
+										<div class="box">
+											<span></span>
 											<div class="content">
 											<h3><a href="PCB.html">PCB</a></h3>
 											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="PCB.html" style=" box-shadow: none;">Read More</a>
 											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-cogs"></span>
+										</div>
+										<div class="box">
+											<span></span>
 											<div class="content">
 											<h3><a href="PCM.html">PCM</a></h3>
 											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="PCM.html" style="border: none; box-shadow: none;">Read More</a>
 											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-calculator"></span>
+										</div>
+										<div class="box">
+											<span></span>
 											<div class="content">
 											<h3><a href="Commerce.html">Commerce</a></h3>
-											<p>Clear explanations, experiment summaries, and topic question banks for exam prep.</p>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Commerce.html" style=" box-shadow: none;">Read More</a>
 											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-book"></span>
+										</div>
+										<div class="box">
+											<span></span>
 											<div class="content">
 											<h3><a href="Humanities.html">Humanities</a></h3>
-											<p>Literature notes, language practice, and model answers for reading & writing.</p>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Humanities.html" style="border: none; box-shadow: none;">Read More</a>
 											</div>
-										</article>
+										</div>
+			
 									</div>
+									
 								</section>
 
 							<!-- Section -->
@@ -113,167 +136,185 @@
 									<header class="major">
 										<h2>Subjects</h2>
 									</header>
-									<div class="posts">
-										<article>
-											<a href="Maths.html" class="image"><img src="images/pic01.jpg" alt="" /></a>
-										<h3>Maths</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Maths.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Physics.html" class="image"><img src="images/pic02.jpg" alt="" /></a>
-										<h3>Physics</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Physics.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Chemistry.html" class="image"><img src="images/pic03.jpg" alt="" /></a>
-										<h3>Chemistry</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Chemistry.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Biology.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
-										<h3>Biology</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Biology.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="English.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										<h3>English</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="English.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Hindi.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										<h3>Hindi </h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Hindi.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Accountancy.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
-										<h3>Accountancy</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Accountancy.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Business Studies.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										<h3>Business Studies</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Business Studies.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Economics.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										<h3>Economics</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Economics.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="History.html" class="image"><img src="images/pic01.jpg" alt="" /></a>
-										<h3>History</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="History.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Psychology.html" class="image"><img src="images/pic02.jpg" alt="" /></a>
-										<h3>Psychology</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Psychology.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Political Science.html" class="image"><img src="images/pic03.jpg" alt="" /></a>
-										<h3>Political Science</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Political Science.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Computer Science.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
-										<h3>Computer Science</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Computer Science.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Entrepreneurship.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										<h3>Entrepreneurship</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Entrepreneurship.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Physical Activity Trainer.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										<h3>Physical Activty Trainer </h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Physical Activity Trainer.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Legal Studies.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
-										<h3>Legal Studies</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Legal Studies.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Artificial Intelligence.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										<h3>Artificial Intelligence</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Artificial Intelligence.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Data Science.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										<h3>Data Science</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Data Science.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Multimedia.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										<h3>Multimedia</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Multimedia.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="Banking.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										<h3>Banking</h3>
-										<p></p>
-											<ul class="actions">
-												<li><a href="Banking.html" class="button">Let's go!</a></li>
-											</ul>
-										</article>
+									<div class="container stream-grid">
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Physics.html">Physics</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Physics.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Chemistry.html">Chemistry</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Chemistry.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Biology.html">Biology</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Biology.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="English.html">English</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="English.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Maths.html">Core Maths</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="CoreMaths.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Maths.html">Applied Maths</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="AppliedMaths.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Accountancy.html">Accountancy</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Accountancy.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Business Studies.html">Business Studies</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Business Studies.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Statistical Economics.html">Statistical Economics</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="StatisticalEconomics.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Micro Economics.html">Microeconomics</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Micro Economics.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="History.html">History</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="History.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Psychology.html">Psychology</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Psychology.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Political Science.html">Political Science</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Political Science.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Computer Science.html">Computer Science</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Computer Science.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Hindi.html">Hindi core</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Hindi.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Entrepreneurship.html">Entrepreneurship</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Entrepreneurship.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Physical Activity Trainer.html">Physical Activity Trainer</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Physical Activity Trainer.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Legal Studies.html">Legal Studies</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Legal Studies.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Artificial Intelligence.html">AI</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Artificial Intelligence.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Data Science.html">DS</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Data Science.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Multimedia.html">Multimedia</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Multimedia.html" style="border: none; box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										<div class="box">
+											<span></span>
+											<div class="content">
+											<h3><a href="Banking.html">Banking</a></h3>
+											<p>Practice problems, step‑by‑step solutions, and past‑paper drills to strengthen concepts.</p>
+											<a href="Banking.html" style=" box-shadow: none;">Read More</a>
+											</div>
+										</div>
+										
+			
 									</div>
 								</section>
 
@@ -347,7 +388,8 @@
     								<br><br>
  
     								<!-- Submit button -->
-    								<input type="submit" value="Submit">
+									 
+    								<input type="submit" value="Submit" class="hover-underline">
 								</form>
 						</section>
 
@@ -390,7 +432,7 @@
 										<li>
 											<span class="opener">Commerce</span>
 											<ul>
-												<li><a href="Accountancy.html">Accountancy</a></li>
+												<li><a href="acc.html">Accountancy</a></li>
 												<li><a href="Business Studies.html">Business Studies</a></li>
 												<li><a href="Micro Economics.html">Micro Economics</a></li>
 												<li><a href="Statistical Economics.html">Statistical Economics</a></li>
@@ -491,52 +533,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-		<script>
-			let deferredPrompt;
-			console.log('PWA Install Script Loaded'); // Debug log
-
-			window.addEventListener('beforeinstallprompt', (e) => {
-				console.log('beforeinstallprompt event fired!'); // This confirms PWA works
-				e.preventDefault();
-				deferredPrompt = e;
-				showInstallPromotion();
-			});
-
-			function showInstallPromotion() {
-				console.log('Showing install button');
-				const installButton = document.createElement('button');
-				installButton.textContent = 'Install App';
-				installButton.className = 'button big';
-				installButton.style.position = 'fixed';
-				installButton.style.bottom = '20px';
-				installButton.style.right = '20px';
-				installButton.style.zIndex = '1000';
-				installButton.onclick = installApp;
-				document.body.appendChild(installButton);
-			}
-
-			function installApp() {
-				console.log('Install button clicked');
-				deferredPrompt.prompt();
-				deferredPrompt.userChoice.then((choiceResult) => {
-					console.log('User choice:', choiceResult.outcome);
-					deferredPrompt = null;
-				});
-			}
-
-			window.addEventListener('appinstalled', (evt) => {
-				console.log('App was installed successfully');
-			});
-
-			// Also check if service worker is registered
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.ready.then(reg => {
-					console.log('Service Worker is active');
-				}).catch(err => {
-					console.log('Service Worker registration error:', err);
-				});
-			}
-		</script>
 		<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
@@ -571,13 +567,4 @@
 
   gtag('config', 'G-M12Y8V1EF4');
 </script>
-	<script>
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', () => {
-				navigator.serviceWorker.register('sw.js')
-					.then(reg => console.log('Service Worker registered', reg))
-					.catch(err => console.log('Service Worker registration failed', err));
-			});
-		}
-	</script>
 </html>
