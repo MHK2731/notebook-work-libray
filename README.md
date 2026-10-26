@@ -83,11 +83,11 @@ Google tag manager's Scripts:
                                 <!-- End Google Tag Manager (noscript) -->
 
 
-    these 2 scripts should be placed in the "<head>" tag just after it like just in the starting of the head tag. These scripts helps the website to connect to google tag manager which gives us necessary statistical data like visits, etc. this code does not display anything on the html page.
+these 2 scripts should be placed in the "<head>" tag just after it like just in the starting of the head tag. These scripts helps the website to connect to google tag manager which gives us necessary statistical data like visits, etc. this code does not display anything on the html page.
 
 
 
-    Main code of a page:
+Main code of a page:
 
 
     <!-- Wrapper -->
