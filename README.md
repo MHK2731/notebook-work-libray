@@ -295,6 +295,8 @@ The same framework applies to PYQ pages. Replace the example paths with the appr
 
 ![Screenshot of the work card section](Readme_images/image-2.png)
 
+
+
 ### Card checklist
 
 - `h3 > a` is the visible card title and primary link.
