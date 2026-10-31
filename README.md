@@ -268,7 +268,7 @@ Work and previous-year question (PYQ) pages use the same card structure, but the
     <div class="box">
       <div class="content">
         <h3><a href="PDFs/English/Eng Recap.pdf">Recapitulation Sheet</a></h3>                                     ← You can change this heading
-        <p>Practice problems, step-by-step solutions, and past-paper drills to strengthen concepts.</p>           ← You can change this paragrapgh
+        <p>Practice problems, step-by-step solutions, and past-paper drills to strengthen concepts.</p>           ← You can change this paragraph
         <a href="PDFs/English/Eng Recap.pdf" style="box-shadow: none;">Read More</a>                     ← You can change this text of this button and also where its linked to
       </div>
     </div>
@@ -295,7 +295,310 @@ The same framework applies to PYQ pages. Replace the example paths with the appr
 
 ![Screenshot of the work card section](Readme_images/image-2.png)
 
+School done question paper's page:
+this page contains the same banner as all other pages but with its own heading with a different description. But this page contains multiple sections same as work pages because this page displays different subject's school done question papers. Every subject has its own section to display multiple question papers across different terms.
+The following code shows how the SCQPs page is structured:
 
+```html
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+
+            </header>
+
+            <!-- Content -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <h1>Welcome to School Done Question Paper's Page</h1><br />                                     ← You can change this heading
+                        <h2>by Mohd Hifzaan Khan</h2>                                     ← You can change this heading
+                        <p>This Website was previously made for Class 10th students of session 2025-26. But Its now usable for the next session as well. It contains all the question banks, school done papers and PYQs for Class 10th CBSE students. We have also launched our app for a better experience. And This website will be updated with the latest question banks and papers as soon as they are released by CBSE. Right now the notebook work present here is of the session 2025-26 but we will be updating it with the latest notebook work soon. So stay tuned and keep visiting our website for the latest updates.
+                        </p>           ← You can change this paragraph
+                        <ul class="actions">
+
+                            <li><a href="https://workhaul.my.canva.site/mhk" class="button big">Go to my old Website</a></li>
+                        </ul>
+
+                </div>
+                <span class="image object">
+										<img src="images/1.jpg" alt="" />
+									</span>
+            </section>
+<!-- Section -->
+<section>
+    <header class="major">
+        <h2>Maths(Basic)</h2>                                     ← You can change this heading
+    </header>
+    <div class="posts">
+
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/MATHS PA1.pdf" class="image"><img src="images/pic02.jpg" alt="" /></a>
+            <h3>PA 1</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/MATHS PA1.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/MATHS PA2.pdf" class="image"><img src="images/pic03.jpg" alt="" /></a>
+            <h3>PA 2</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/MATHS PA2.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/MATHS PA3.pdf" class="image"><img src="images/pic04.jpg" alt="" /></a>
+            <h3>PA 3</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/MATHS PA3.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/MATHS-BASIC (CT).pdf" class="image"><img src="images/pic05.jpg" alt="" /></a>
+            <h3>Class Test 1</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/MATHS-BASIC (CT).pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/MATHS-BASIC (CT-2).pdf" class="image"><img src="images/pic06.jpg" alt="" /></a>
+            <h3>Class Test 2</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/MATHS-BASIC (CT-2).pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+
+
+    </div>
+</section>
+<!-- Section -->
+<section>
+    <header class="major">
+        <h2>Hindi</h2>                                     ← You can change this heading
+    </header>
+    <div class="posts">
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/HINDI UT.pdf" class="image"><img src="images/pic01.jpg" alt="" /></a>
+            <h3>Unit Test</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/HINDI UT.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/HINDI PA1.pdf" class="image"><img src="images/pic02.jpg" alt="" /></a>
+            <h3>PA 1</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/HINDI PA1.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/HINDI PA2.pdf" class="image"><img src="images/pic03.jpg" alt="" /></a>
+            <h3>PA 2</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/HINDI PA2.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/Hindi PA3.pdf" class="image"><img src="images/pic04.jpg" alt="" /></a>
+            <h3>Preboard 1</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/Hindi PA3.pdf.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+
+
+
+    </div>
+</section>
+<!-- Section -->
+<section>
+    <header class="major">
+        <h2>Science</h2>                                     ← You can change this heading
+    </header>
+    <div class="posts">
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/SCIENCE UT.pdf" class="image"><img src="images/pic01.jpg" alt="" /></a>
+            <h3>Unit Test</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/SCIENCE UT.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/SCIENCE PA1.pdf" class="image"><img src="images/pic02.jpg" alt="" /></a>
+            <h3>PA 1</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/SCIENCE PA1.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/SCIENCE PA2.pdf" class="image"><img src="images/pic03.jpg" alt="" /></a>
+            <h3>PA 2</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/SCIENCE PA2.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/SCIENCE PA3.pdf" class="image"><img src="images/pic04.jpg" alt="" /></a>
+            <h3>PA 3</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/SCIENCE PA3.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+
+
+
+    </div>
+</section>
+<!-- Section -->
+<section>
+    <header class="major">
+        <h2>English</h2>                                     ← You can change this heading
+    </header>
+    <div class="posts">
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/ENGLISH UT.pdf" class="image"><img src="images/pic01.jpg" alt="" /></a>
+            <h3>Unit Test</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/ENGLISH UT.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/ENGLISH PA1.pdf" class="image"><img src="images/pic02.jpg" alt="" /></a>
+            <h3>PA 1</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/ENGLISH PA1.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/ENGLISH PA2.pdf" class="image"><img src="images/pic03.jpg" alt="" /></a>
+            <h3>PA2</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/ENGLISH PA2.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/ENGLISH PA3.pdf" class="image"><img src="images/pic04.jpg" alt="" /></a>
+            <h3>PA3</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/ENGLISH PA3.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+
+
+
+    </div>
+</section>
+<!-- Section -->
+<section>
+    <header class="major">
+        <h2>SST</h2>                                     ← You can change this heading
+    </header>
+    <div class="posts">
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/SST UT.pdf" class="image"><img src="images/pic01.jpg" alt="" /></a>
+            <h3>Unit Test</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/SST UT.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/SST PA1.pdf" class="image"><img src="images/pic02.jpg" alt="" /></a>
+            <h3>PA 1</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/SST PA1.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/SST PA2.pdf" class="image"><img src="images/pic03.jpg" alt="" /></a>
+            <h3>PA2</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/SST PA2.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/SST PA3.pdf" class="image"><img src="images/pic04.jpg" alt="" /></a>
+            <h3>PA 3</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/SST PA3.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+
+
+
+    </div>
+</section>
+<!-- Section -->
+<section>
+    <header class="major">
+        <h2>AI</h2>                                     ← You can change this heading
+    </header>
+    <div class="posts">
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/AI UT.pdf" class="image"><img src="images/pic01.jpg" alt="" /></a>
+            <h3>Unit Test</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/AI UT.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/AI PA1.pdf" class="image"><img src="images/pic02.jpg" alt="" /></a>
+            <h3>PA 1</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/AI PA1.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/AI PA2.pdf" class="image"><img src="images/pic03.jpg" alt="" /></a>
+            <h3>PA 2</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/AI PA2.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/AI PA3.pdf" class="image"><img src="images/pic04.jpg" alt="" /></a>
+            <h3>PA 3</h3>                                     ← You can change this heading
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/AI PA3.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+
+
+
+    </div>
+</section>
+<!-- Section -->
+
+<!-- Section -->                                
+```
 
 ### Card checklist
 
