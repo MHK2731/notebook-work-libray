@@ -606,6 +606,54 @@ The following example shows the structure of the SCQPs page:
 
 <!-- Section -->                                
 ```
+to add a section for a new subject edit the following code:
+
+```html
+<!-- Section -->
+<section>
+    <header class="major">
+        <h2>AI</h2>
+    </header>
+    <div class="posts">
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/AI UT.pdf" class="image"><img src="images/pic01.jpg" alt="" /></a>
+            <h3>Unit Test</h3>
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/AI UT.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/AI PA1.pdf" class="image"><img src="images/pic02.jpg" alt="" /></a>
+            <h3>PA 1</h3>
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/AI PA1.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/AI PA2.pdf" class="image"><img src="images/pic03.jpg" alt="" /></a>
+            <h3>PA 2</h3>
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/AI PA2.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+        <article>
+            <a href="PDFs/Notebook work class 10th/Question Papers/AI PA3.pdf" class="image"><img src="images/pic04.jpg" alt="" /></a>
+            <h3>PA 3</h3>
+            <p></p>
+            <ul class="actions">
+                <li><a href="PDFs/Notebook work class 10th/Question Papers/AI PA3.pdf" class="button">Let's go!</a></li>
+            </ul>
+        </article>
+
+
+
+    </div>
+</section>
+<!-- Section -->
+```
 
 ### Card checklist
 
