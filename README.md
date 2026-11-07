@@ -654,6 +654,90 @@ to add a section for a new subject edit the following code:
 </section>
 <!-- Section -->
 ```
+### Navigation bar
+
+The following code creates the website navigation bar. Add or remove links as needed.
+
+```html
+<!-- Sidebar -->
+<div id="sidebar">
+    <div class="inner">
+        <!-- Menu -->
+        <nav id="menu">
+            <header class="major">
+                <h2>Menu</h2>
+            </header>
+            <ul>
+                <li><a href="9th/9thHome.html">Class 9th</a></li>
+                <li><a href="10th/10thHome.html">Class 10th</a></li>
+                <li><a href="11th/11th Home.html">Class 11th</a></li>
+                <li><a href="12th/12th Home.html">Class 12th</a></li>
+            </ul>
+        </nav>
+
+        <!-- Section -->
+        <!--
+        <section>
+            <header class="major">
+                <h2>Recent Notes</h2>
+            </header>
+            <div class="mini-posts">
+                <article>
+                    <a href="#" class="image">
+                        <img src="images/pic07.jpg" alt="" />
+                    </a>
+                    <p>Short updates and recent additions from the notebook library.</p>
+                </article>
+                <article>
+                    <a href="#" class="image">
+                        <img src="images/pic08.jpg" alt="" />
+                    </a>
+                    <p>Short updates and recent additions from the notebook library.</p>
+                </article>
+                <article>
+                    <a href="#" class="image">
+                        <img src="images/pic09.jpg" alt="" />
+                    </a>
+                    <p>Short updates and recent additions from the notebook library.</p>
+                </article>
+            </div>
+            <ul class="actions">
+                <li><a href="#" class="button">More</a></li>
+            </ul>
+        </section>
+        -->
+
+        <!-- Section -->
+        <section>
+            <header class="major">
+                <h2>Get in touch</h2>
+            </header>
+            <p>
+                Have a question or suggestion? Reach out at
+                <a href="mailto:hifzaankhandpsjkp.3270@gmail.com">hifzaankhandpsjkp.3270@gmail.com</a>
+                or call us and we'll respond promptly.
+            </p>
+            <ul class="contact">
+                <li class="icon solid fa-envelope">
+                    <a href="mailto:hifzaankhandpsjkp.3270@gmail.com">hifzaankhandpsjkp.3270@gmail.com</a>
+                </li>
+                <li class="icon solid fa-phone">7311140158</li>
+                <li class="icon solid fa-home">
+                    C-29 Kendriya Vihar colony<br />
+                    Jankipuram Lucknow, UP
+                </li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">
+                &copy; Notebook Work Library. All rights reserved. Designed by Mohd Hifzaan Khan
+            </p>
+        </footer>
+    </div>
+</div>
+```
 
 ### Card checklist
 
